@@ -1,1 +1,5 @@
-hello 123
+git status 
+// tr?ng thái c?a các file
+git add "tên file" ho?c git add .
+git commit -m "tên t?p"
+
