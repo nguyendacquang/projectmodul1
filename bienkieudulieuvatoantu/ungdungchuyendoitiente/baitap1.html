@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Amount:<br>
+    <input type="number" id = "input1" value =0>
+    <br>
+    From Currency:<br>
+    <select id="fromCurrency">
+        <option value="23000">VietNam</option>
+        <option value="1">USD</option>
+    </select>
+    <br>
+    To Currency:<br>
+    <select id="toCurrency">
+        <option value="23000">VietNam</option>
+        <option value="1">USD</option>
+    </select>
+    <input type="button" onclick="showresult()" value="convert"/>
+    <p id="ketqua">ket qua: </p>
+</form>
+<script>
+    var vietnam = 23000;
+    var usd = 1;
+    function showresult(){
+        var ketqua;
+        var fromCurrency = document.getElementById("fromCurrency");
+        var toCurrency = document.getElementById("toCurrency");
+        var input = document.getElementById("input1").value ;
+
+        if ((fromCurrency[fromCurrency.selectedIndex].text == "VietNam") && (toCurrency[toCurrency.selectedIndex].text == "USD")){
+           var a = input/23000;
+           ketqua = "result: " + a;
+        }else if ((fromCurrency[fromCurrency.selectedIndex].text == "USD") && (toCurrency[toCurrency.selectedIndex].text == "VietNam")) {
+            var b = input*23000;
+            ketqua = "result: " + b;
+        }else {
+            var c = 1;
+           ketqua = "result: " +c;
+        }
+        document.getElementById("ketqua").innerHTML = ketqua;
+    }
+</script>
+</body>
+</html>
