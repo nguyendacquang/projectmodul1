@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="html"></p>
+<p id="text"></p>
+<button onclick="RunTest()">submit</button>
+<script>
+    var result ="<input type='text' value='hello'/>";
+    function RunTest() {
+        document.getElementById('html').innerHTML= result;
+        document.getElementById('text').innerText= result;
+    }
+</script>
+</body>
+</html>
