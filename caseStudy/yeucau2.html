@@ -109,11 +109,13 @@
             break;
         case "3":
             let moneyPerDays = 0;
-            if (typeService === "villa") {
+            if (typeService === "villa"){
                 moneyPerDays = 500;
-            } else if (typeService === "house"){
+            }
+            else if (typeService === "house"){
                 moneyPerDays = 300;
-            }else {
+            }
+            else {
                 moneyPerDays = 100;
             }
             let discountCondition = 0;
@@ -134,7 +136,7 @@
                 discountCondition += 5;
             }
             if (rentDay > 7){
-                discountCondition +=30;
+                discountCondition += 30;
             }else  if (rentDay >= 5){
                 discountCondition += 20;
             }else if (rentDay >= 2) {
@@ -150,8 +152,8 @@
                 discountCondition += 2;
             }
             let totalPays = moneyPerDays * rentDay * (1 - discount)/100;
-            totalPays =totalPays - discountCondition;
-            alert("total pays after discount condition" + totalPays);
+            totalPays = totalPays - discountCondition;
+            alert("total pays after discount condition: " + totalPays);
             break;
         default:
             alert("fail!!!");

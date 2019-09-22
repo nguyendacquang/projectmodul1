@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let checkvalidata = false;
+    let emailCustomer ;
+    let birthdayCustomer;
+    let IdCard;
+    let discount;
+    let numberOfAccompanying;
+    let renday;
+    let addressCustomer;
+    let nameCustomer ;
+    let typeCustomer ;
+    let typeRom;
+    let typeService;
+
+    do{
+        checkvalidata =false;
+        typeService = prompt("enter typeService: ");
+        if (!isNaN(typeService)) {
+            typeService = Number.parseFloat(typeService);
+            if (typeService>=0 && Number.isInteger(typeService)){
+                checkvalidata = true;
+            }
+        }
+        if (!checkvalidata){
+            alert("typeService invalid !!! please try again !!!");
+        }
+    }while (!checkvalidata);
+
+    do{
+        checkvalidata =false;
+        typeCustomer = prompt("enter typeCustomer: ");
+        if (!isNaN(typeCustomer)) {
+            typeCustomer = Number.parseFloat(typeCustomer);
+            if (typeCustomer>=0 && Number.isInteger(typeCustomer)){
+                checkvalidata = true;
+            }
+        }
+        if (!checkvalidata){
+            alert("typeCustomer invalid !!! please try again !!!");
+        }
+    }while (!checkvalidata);
+
+    do{
+        checkvalidata =false;
+        typeRom = prompt("enter typeRom: ");
+        if (!isNaN(typeRom)) {
+            typeRom = Number.parseFloat(typeRom);
+            if (typeRom>=0 && Number.isInteger(typeRom)){
+                checkvalidata = true;
+            }
+        }
+        if (!checkvalidata){
+            alert("typeRom invalid !!! please try again !!!");
+        }
+    }while (!checkvalidata);
+
+    do{
+        checkvalidata =false;
+        nameCustomer = prompt("enter nameCustomer: ");
+        if (!isNaN(nameCustomer)) {
+            nameCustomer = Number.parseFloat(nameCustomer);
+            if (nameCustomer>=0 && Number.isInteger(nameCustomer)){
+                checkvalidata = true;
+            }
+        }
+        if (!checkvalidata){
+            alert("nameCustomer invalid !!! please try again !!!");
+        }
+    }while (!checkvalidata);
+
+    do{
+        checkvalidata =false;
+        addressCustomer = prompt("enter addressCustomer: ");
+        if (!isNaN(addressCustomer)) {
+            addressCustomer = Number.parseFloat(addressCustomer);
+            if (addressCustomer>=0 && Number.isInteger(addressCustomer)){
+                checkvalidata = true;
+            }
+        }
+        if (!checkvalidata){
+            alert("addressCustomer invalid !!! please try again !!!");
+        }
+    }while (!checkvalidata);
+    do{
+        checkvalidata =false;
+        renday = prompt("enter renday: ");
+        if (!isNaN(renday)) {
+            renday = Number.parseFloat(renday);
+            if (renday>=0 && Number.isInteger(renday)){
+                checkvalidata = true;
+            }
+        }
+        if (!checkvalidata){
+            alert("renday is invalid !!! please try again !!!");
+        }
+    }while (!checkvalidata);
+
+    do{
+        checkvalidata =false;
+        numberOfAccompanying = prompt("enter numberOfAccompanying: ");
+        if (!isNaN(numberOfAccompanying)) {
+            numberOfAccompanying = Number.parseFloat(numberOfAccompanying);
+            if (numberOfAccompanying>=0 && Number.isInteger(numberOfAccompanying)){
+                checkvalidata = true;
+            }
+        }
+        if (!checkvalidata){
+            alert("numberOfAccompanying is invalid !!! please try again !!!");
+        }
+    }while (!checkvalidata);
+
+    do{
+        checkvalidata =false;
+        discount = prompt("enter discount: ");
+        if (!isNaN(discount)) {
+            discount = Number.parseFloat(discount);
+            if (discount>=0){
+                checkvalidata = true;
+            }
+        }
+        if (!checkvalidata){
+            alert("discount is invalid !!! please try again !!!");
+        }
+    }while (!checkvalidata);
+
+    do {
+        checkvalidata = false;
+        IdCard = prompt("enter ID card customer: ");
+        if(isNaN(IdCard)){
+            alert("idcard is invalid !!! please try again !!!");
+            continue;
+        }
+        IdCard = Number.parseFloat(IdCard);
+        if (!Number.isInteger(IdCard)){
+            alert("idcard is invalid !!! please try again !!!");
+            continue;
+        }
+        if (IdCard>=100000000 && IdCard <= 999999999 ) {
+            checkvalidata = true;
+        }
+        else {
+            alert("idcard is invalid !!! please try again !!!");
+        }
+    }while (!checkvalidata);
+    
+    do {
+        checkvalidata = false;
+        birthdayCustomer = prompt("enter birthday customer (dd/MM/yyyy): ");
+        if (birthdayCustomer.charAt(2)!=='/' || birthdayCustomer.charAt(5)!=='/'){
+            alert("birthday is invalid !!! please try again");
+            continue;
+        }
+        let day = birthdayCustomer.substring(0,2);
+        let month = birthdayCustomer.substring(3,5);
+        let year = birthdayCustomer.substring(6,10);
+        if (!isNaN(day)&& !isNaN(month) && !isNaN(year)){
+            day = Number.parseInt(day);
+            month = Number.parseInt(month);
+            year = Number.parseInt(year);
+            if (Number.isInteger(day)&&Number.isInteger(month)&&Number.isInteger(year)){
+                if (day>0 && day<32 && month<13 && month>0 && year>=1960 && year<=2019){
+                    checkvalidata = true;
+                }
+            }
+        }
+        if (!checkvalidata) {
+            alert("birthday is invalid !!! please try again !!!");
+        }
+    }while (!checkvalidata);
+
+    do {
+        let checkvalidata = true;
+        emailCustomer = prompt("enter email customer: ");
+         let countDoc = 0;
+         let countAt = 0;
+         let i;
+         for ( i =0; i < emailCustomer.length; i++) {
+             if (emailCustomer.charAt(i) === "@") {
+                 countAt++;
+             }
+             if (emailCustomer.charAt(i) === ".") {
+                 countDoc++;
+             }
+         }
+         if (countAt !==1 || countDoc <1){
+             checkvalidata = false;
+             alert("email is invalid !!! please try again");
+         }
+
+    } while (!checkvalidata);
+
+    let totalPays = 500 * Number.parseInt(rentDay) * (1 - Number.parseFloat(discount))/100;
+    alert("Information of  customer: \n"+
+         "name: "+ nameCustomer +
+        "\nid card: "+IdCard +
+        "\nbirthday: "+ birthdayCustomer +
+        "\naddress: "+ addressCustomer +
+        "\ntype customer: "+ typeCustomer +
+        "\ndiscount: "+ discount+
+        "\nnumberOfAccompanying: "+numberOfAccompanying+
+        "\ntype rom: "+typeRom +
+        "\nrent day: "+rentDay+
+        "\ntype service: "+typeService+
+        "\nemailCustomer: "+ emailCustomer+
+        "\ntotal pays: "+ totalPays
+    )
+</script>
+</body>
+</html>
