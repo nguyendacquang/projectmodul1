@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="input1"/><br/>
+    From:
+    <br/>
+    <select id="input2">
+        <option>Meters</option>
+        <option>Feet</option>
+    </select>
+    <br/>
+    To:
+    <br/>
+    <select id="input3">
+        <option>Feet</option>
+        <option>Meters</option>
+    </select>
+    <br/>
+    <input type="button" onclick="chuyenDoi()" value="ketqua"/>
+    <br/> <p id="ketqua">result:</p>
+</form>
+
+<script>
+    function chuyenDoi() {
+       let input1 = document.getElementById("input1").value;
+       let input2 = document.getElementById("input2");
+       let input3 = document.getElementById("input3");
+       let result;
+       if (input2[input2.selectedIndex].text=="Meters" && input3[input3.selectedIndex].text=="Feet"){
+           result ="result: "+ input1*0.305;
+       }else if (input2[input2.selectedIndex].text=="Feet" && input3[input3.selectedIndex].text=="Meters"){
+           result ="result: "+ input1*3.279;
+       }else {
+           result ="result: "+ 1;
+       }
+       document.getElementById("ketqua").innerText= result;
+    }
+</script>
+</body>
+</html>
