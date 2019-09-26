@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNameCustomers = [];
+    let choose = prompt("1.Add new customer."+
+    "\n2.Deleta customer.");
+    switch (choose) {
+        case "1":
+            let arrLength = prompt("enter the number customer you want to add: ");
+            for (let i =0; i < arrLength; i++){
+                arrNameCustomers.push(prompt("enter name customer no "+ (i + 1)));
+            }
+            let result = "";
+            for (let i=0; i < arrNameCustomers.length; i++){
+                result += "\n" + (i + 1)+ ". " + arrNameCustomers[i];
+            }
+            alert(result);
+            arrNameCustomers.sort();
+            // arrNameCustomers.reverse(); //dung de dao nguoc.
+            result = "";
+
+            for (let i=0; i < arrNameCustomers.length; i++){
+                result += "\n" + (i + 1)+ ". " + arrNameCustomers[i];
+            }
+            alert(result);
+            break;
+        case "2":
+            break;
+        default:
+            alert("Fail!!!");
+            break;
+    }
+</script>
+</body>
+</html>
