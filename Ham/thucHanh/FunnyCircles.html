@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="MyCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    function Circle(x,y,radius) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+    function getRandomHex() {
+        return Math.floor(Math.random() * 225);
+    }
+    function getRandomColor() {
+        let red = getRandomHex();
+        let green = getRandomHex();
+        let blue = getRandomHex();
+        return "rgb(" + red + "," + green + "," + blue + ")";
+    }
+    // buoc 2: 1 hinh tron co dinh
+    // function createCircle() {
+    //     let ctx = document.getElementById("MyCanvas").getContext("2d");
+    //     let circle = new Circle(500, 500, 80);
+    //     ctx.beginPath();
+    //     ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+    //     ctx.fill();
+    // }
+    // createCircle();
+    
+    // buoc 3: 1 hinh tron vo ban kinh ngau nhien
+    // function createCircle1() {
+    //     let ctx = document.getElementById("MyCanvas").getContext("2d");
+    //     let radius = Math.floor(Math.random()*80);
+    //     let circle = new Circle(500, 500, radius);
+    //     ctx.beginPath();
+    //     ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+    //     ctx.fill();
+    // }
+    // createCircle1();
+    
+    // buoc 4: 1 hinh tron ngau nhien ve ban kinh va mau sac
+    // function createCircle() {
+    //     let ctx = document.getElementById("MyCanvas").getContext("2d");
+    //     let radius = Math.floor(Math.random()*80);
+    //     let color = getRandomColor();
+    //     let circle = new Circle(500, 500, radius);
+    //     ctx.beginPath();
+    //     ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+    //     ctx.fillStyle = color;
+    //     ctx.fill();
+    // }
+    // createCircle();
+
+    // buoc 5 va buoc 6 hinh tron vi tri ngau nhien
+    // function createCircle() {
+    //     let ctx = document.getElementById("MyCanvas").getContext("2d");
+    //     let radius = Math.floor(Math.random()*80);
+    //     let color = getRandomColor();
+    //     let x = Math.random()* window.innerWidth;
+    //     let y = Math.random()* window.innerHeight;
+    //     let circle = new Circle(x, y, radius);
+    //     ctx.beginPath();
+    //     ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+    //     ctx.fillStyle = color;
+    //     ctx.fill();
+    // }
+    // createCircle();
+    // createCircle();
+
+    // buoc 7
+    function createCircle() {
+        let ctx = document.getElementById("MyCanvas").getContext("2d");
+        let radius = Math.floor(Math.random() * 80);
+        let color = getRandomColor();
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
+        let circle = new Circle(x, y, radius);
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = color;
+        ctx.fill();
+    }
+    function createMultipleCicle() {
+        for (let i = 1; i < 30; i ++){
+            createCircle();
+        }
+    }
+    createMultipleCicle();
+</script>
+</body>
+</html>

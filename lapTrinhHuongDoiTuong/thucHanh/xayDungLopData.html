@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let myDay = function (day,month,year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.getDay = function () {
+            return this.day;
+        };
+        this.getMonth = function () {
+            return this.month;
+        };
+        this.getYear = function () {
+            return this.year;
+        };
+        this.setDay = function () {
+            this.day = day;
+        };
+        this.setMonth = function () {
+            this.month = month;
+        };
+        this.setYear = function () {
+            this.year = year;
+        };
+    };
+    let data = new myDay(2,2,2007);
+    let day = data.getDay(); //2
+    let month = data.getMonth(); //2
+    let year = data.getYear(); //2007
+    alert(day + "/" + month +"/"+ year );
+
+    let newData = new myDay(10,10,2019);
+    let newday = newData.getDay(); //10
+    let newmonth = newData.getMonth(); //10
+    let newyear = newData.getYear(); //2019
+    alert(newday + "/" + newmonth +"/"+ newyear );
+    // còn bước 9 và 10 em chưa làm được.
+</script>
+</body>
+</html>

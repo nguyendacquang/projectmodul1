@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let rectangle = function (d,r) {
+        let result;
+        this.d = d;//chieu dai
+        this.r = r;//chieu rong
+        let P = function (d,r) {
+            result =  (d+r)*2;
+            return result;
+        };
+        alert("chu vi la: " + P);
+        let S = function (d,r) {
+            result = d*r;
+            return result;
+        };
+        alert("dien tich la: " + S);
+    };
+    let d =parseInt(prompt("chieu dai: "));
+    let r = parseInt(prompt("chieu rong: "));
+    rectangle(d,r);
+</script>
+</body>
+</html>
